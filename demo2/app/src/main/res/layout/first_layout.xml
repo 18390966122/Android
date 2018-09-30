@@ -2,29 +2,44 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <Toobar>
-        
     </Toobar>
 
     <Button
-        android:id="@+id/button_1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/button_name"/>
-    <Button
         android:id="@+id/button_2"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="跳转"/>
+        android:text="@string/button2_name"/>
+
+    <Button
+        android:id="@+id/button_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Button"/>
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="@string/app_name"/>
+
+    <Button
+        android:id="@+id/normalActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="normalActivity"/>
+    <Button
+        android:id="@+id/dialogActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="dialogActivity"/>
 
 </LinearLayout>
