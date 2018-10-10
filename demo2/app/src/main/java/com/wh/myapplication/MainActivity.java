@@ -1,5 +1,6 @@
 package com.wh.myapplication;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
@@ -25,6 +26,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.first_layout);
+        ActivityCollector.addActivity(this);
+        if (savedInstanceState != null) {
+//            String tempData
+        }
         Log.i("MainActivity", "onCreate: 1111111111111111111");
         Button button1 = (Button) findViewById(R.id.button_1);
         button1.setOnClickListener(new View.OnClickListener() {
@@ -33,9 +38,9 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "You clicked button1", Toast.LENGTH_SHORT).show();
             }
         });
-        Button button3 = (Button) findViewById(R.id.button_3);
+        Button button2 = (Button) findViewById(R.id.button_2);
          // 点击按钮跳转页面，传入MainActivity.this作为上下文，然后SecondActivity.class作为目标页，通过startActivity来执行
-        button3.setOnClickListener(new View.OnClickListener() {
+        button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String data = "Hello SecondActivity";
@@ -86,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        ActivityCollector.removeAll();
         Log.d(TAG, "onDestroy: ");
     }
     @Override
@@ -96,7 +102,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-
+        String tempData = "Something you just save";
+        outState.putString("data_key", tempData);
     }
 //
 //    @Override

@@ -19,6 +19,8 @@
         <activity android:name=".SecondActivity"></activity>
         <activity android:name=".DialogActivity" android:theme="@android:style/Animation.Dialog"></activity>
         <activity android:name=".NormalActivity"></activity>
+        <activity android:name=".BaseActivity"></activity>
+        <!--<activity android:name=".ActivityCollector"></activity>-->
     </application>
 
 </manifest>
